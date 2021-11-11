@@ -1,17 +1,20 @@
 #include <iostream>
 using namespace std;
 
-int f(int n) {
-   if (n == 1) return 1;
-   return n + f(n-1);
-}
-
 int main() {
    int n = 0;
    cin >> n;
-   if (n <= 2)
+   if (n < 2) {
       cout << "errore";
-   else
-      cout << f(n);
+      return 0;
+   }
+   int a = 1;
+   int b = 1;
+   for (int i = 0; i < n; i++) {
+      cout << a;
+      int s = a + b;
+      a = b;
+      b = s;
+   }
    return 0;
 }
